@@ -17,16 +17,18 @@
 ;  License Details: https://creativecommons.org/licenses/by-sa/3.0/
 ;============================================================
 
+[Variables]
+Which_Icon_Use_For_Current_Condition=NA
 ; ============================================================
-; Open-Meteo Weather API - Temperature Only
-; Fetches current temperature from Open-Meteo API
+; Open-Meteo Weather API - Temperature and Weather Code
+; Fetches current temperature and weather condition code from Open-Meteo API
 ; API Documentation: https://open-meteo.com/en/docs
 ; ============================================================
 
 [Measure_Weather_Parent]
 Measure=WebParser
-URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&current=temperature_2m&temperature_unit=#Temperature_Unit#&timezone=auto
-RegExp=(?siU).*"current".*"temperature_2m":([0-9.-]+).*
+URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&current=temperature_2m,weather_code&temperature_unit=#Temperature_Unit#&timezone=auto
+RegExp=(?siU).*"current":\{.*"temperature_2m":([0-9.-]+),.*"weather_code":([0-9]+)
 UpdateRate=600
 DynamicVariables=1
 
@@ -39,4 +41,10 @@ DynamicVariables=1
 [Measure_Current_Temperature_Rounded]
 Measure=Calc
 Formula=Ceil([Measure_Current_Temperature])
+DynamicVariables=1
+
+[Measure_Current_Weather_Code]
+Measure=WebParser
+URL=[Measure_Weather_Parent]
+StringIndex=2
 DynamicVariables=1
