@@ -12,6 +12,10 @@ Antialias=1
 DynamicVariables=1
 Container=ContentContainer
 ;=============================================================
+;           Measures
+;=============================================================
+@include_frostbehind_measure=#@#Includes\FrostBehindMeasure.inc
+;=============================================================
 ;           Content
 ;=============================================================
 [Current_Temperature]
