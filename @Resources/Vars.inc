@@ -21,4 +21,4 @@ Latitude=29.704813
 Longitude=72.560036
 Temperature_Unit=celsius
 Scale=1
-Layout=3
+Layout=4
