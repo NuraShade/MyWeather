@@ -36,7 +36,7 @@ Container=ContentContainer
 ;=============================================================
 ;           Content
 ;=============================================================
-[Current_Time_Of_Day]
+[Current_Time_Of_Day_Text]
 Meter=String
 MeasureName=Measure_Time_Of_Day
 X=((#Background_Width#/2)*#Scale#)
@@ -56,7 +56,7 @@ H=(#Current_Weather_Condition_H#*#Scale#)
 DynamicVariables=1
 Container=ContentContainer
 
-[Current_Temperature]
+[Current_Temperature_Text]
 Meter=String
 MeasureName=Measure_Current_Temperature_Rounded
 MeasureName2=Measure_Temperature_Unit
@@ -67,7 +67,7 @@ FontFace=Samsung Sharp Sans
 FontSize=(50*#Scale#)
 MeterStyle=Text_Style
 
-[Current_Weather_Condition_Translated]
+[Current_Weather_Condition_Translated_Text]
 Meter=String
 MeasureName=Measure_Weather_Condition_Translated
 Text=%1

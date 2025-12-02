@@ -29,7 +29,7 @@ H=(#Current_Weather_Condition_H#*#Scale#)
 DynamicVariables=1
 Container=ContentContainer
 
-[Current_Temperature]
+[Current_Temperature_Text]
 Meter=String
 MeasureName=Measure_Current_Temperature_Rounded
 MeasureName2=Measure_Temperature_Unit

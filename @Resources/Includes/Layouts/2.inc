@@ -18,7 +18,7 @@ Container=ContentContainer
 ;=============================================================
 ;           Content
 ;=============================================================
-[Current_Temperature]
+[Current_Temperature_Text]
 Meter=String
 MeasureName=Measure_Current_Temperature_Rounded
 MeasureName2=Measure_Temperature_Unit

@@ -22,7 +22,7 @@ Shape=Rectangle 0,0,((#Background_Width#*#Scale#)/1.5),(#Background_Height#*#Sca
 DynamicVariables=1
 Container=ContentContainer
 
-[Current_Temperature]
+[Current_Temperature_Text]
 Meter=String
 MeasureName=Measure_Current_Temperature_Rounded
 X=(((#Background_Width#*#Scale#)/1.5)/2)r
@@ -30,7 +30,7 @@ Y=(40*#Scale#)
 Text=%1
 MeterStyle=Text_Style
 
-[Current_Weather_Condition_Translated]
+[Current_Weather_Condition_Translated_Text]
 Meter=String
 MeasureName=Measure_Weather_Condition_Translated
 Text=%1

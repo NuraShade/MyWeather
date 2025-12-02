@@ -80,4 +80,18 @@ Shape=Rectangle 0,0,((#Background_Width#*#Scale#)-20*#Scale#),(((#Background_Hei
 DynamicVariables=1
 Container=ContentContainer
 
-[Feels_And_Low_Tonight_Temperature_Shape]
+[Feels_And_Low_Tonight_Temperature_Text]
+Meter=String
+MeasureName=Measure_Current_Temperature_Rounded
+MeasureName2=Measure_Today_Min_Temperature_Rounded
+X=(((#Background_Width#*#Scale#)-20*#Scale#)/2)r
+Y=((((#Background_Height#*#Scale#)-20*#Scale#)/3.2)/2)r
+Text=Feels Like %1#CRLF#Low Tonight %2
+FontSize=(15*#Scale#)
+StringAlign=CenterCenter
+FontWeight=900
+MeterStyle=Text_Style
+InlineSetting=Weight | 500
+InlinePattern=Feels Like
+InlineSetting2=Weight | 500
+InlinePattern2=Low Tonight
