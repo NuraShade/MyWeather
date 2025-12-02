@@ -20,5 +20,7 @@
 Latitude=29.704813
 Longitude=72.560036
 Temperature_Unit=celsius
+; Options: kmh, mph, ms, kn (kilometers/hour, miles/hour, meters/second, knots)
+Wind_Speed_Unit=kmh
 Scale=1
-Layout=4
+Layout=5
