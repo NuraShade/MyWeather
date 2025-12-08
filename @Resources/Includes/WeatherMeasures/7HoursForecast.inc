@@ -1,6 +1,7 @@
 ;============================================================
 ;  NuraShade Skin
 ;  Copyright (c) 2025 NuraShade
+;  Version 1.0
 ;
 ;  Licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
 ;  You are free to:
@@ -16,14 +17,23 @@
 ;
 ;  License Details: https://creativecommons.org/licenses/by-sa/3.0/
 ;============================================================
+[Variables]
+; Latitude=29.704813
+; Longitude=72.560036
+; Options: celsius,fahrenheit
+; Temperature_Unit=celsius
+; ; Options: kmh, mph, ms, kn (kilometers/hour, miles/hour, meters/second, knots)
+; Wind_Speed_Unit=kmh
+Debug=0
+
 [Measure_Weather_Hourly_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&hourly=temperature_2m,weather_code,is_day&timezone=auto&forecast_hours=7
 RegExp=(?siU)"hourly".*?"time":\["([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)"\].*?"temperature_2m":\[([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+)\].*?"weather_code":\[([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+)\].*?"is_day":\[([0-1]),([0-1]),([0-1]),([0-1]),([0-1]),([0-1]),([0-1])\]
 UpdateRate=600
 DynamicVariables=1
-; Debug=2
-; Debug2File=WeatherHourly.json
+Debug=#Debug#
+Debug2File=#@#Debug\WeatherHourly.json
 ;============================================================
 ; Hourly Forecast Times
 ;============================================================

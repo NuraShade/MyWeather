@@ -1,6 +1,7 @@
 ;============================================================
 ;  NuraShade Skin
 ;  Copyright (c) 2025 NuraShade
+;  Version 1.0
 ;
 ;  Licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
 ;  You are free to:
@@ -16,14 +17,23 @@
 ;
 ;  License Details: https://creativecommons.org/licenses/by-sa/3.0/
 ;============================================================
+[Variables]
+; Latitude=29.704813
+; Longitude=72.560036
+; Options: celsius,fahrenheit
+; Temperature_Unit=celsius
+; ; Options: kmh, mph, ms, kn (kilometers/hour, miles/hour, meters/second, knots)
+; Wind_Speed_Unit=kmh
+Debug=0
+
 [Measure_Weather_Daily_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&forecast_days=7&temperature_unit=#Temperature_Unit#
 RegExp=(?siU)"daily".*?"time":\["([0-9-]+)","([0-9-]+)","([0-9-]+)","([0-9-]+)","([0-9-]+)","([0-9-]+)","([0-9-]+)"\].*?"weather_code":\[([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+),([0-9]+)\].*?"temperature_2m_max":\[([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+)\].*?"temperature_2m_min":\[([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+),([0-9.-]+)\].*?"sunrise":\["([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)"\].*?"sunset":\["([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)","([0-9-T:]+)"\]
 UpdateRate=600
 DynamicVariables=1
-Debug=2
-Debug2File=WeatherDaily.json
+Debug=#Debug#
+Debug2File=#@#Debug\WeatherDaily.json
 
 [Measure_Day1_Date]
 Measure=WebParser
