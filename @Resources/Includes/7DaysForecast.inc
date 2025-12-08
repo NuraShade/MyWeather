@@ -186,10 +186,20 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=15
 DynamicVariables=1
 
+[Measure_Day1_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day1_Max_Temperature])
+DynamicVariables=1
+
 [Measure_Day2_Max_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=16
+DynamicVariables=1
+
+[Measure_Day2_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day2_Max_Temperature])
 DynamicVariables=1
 
 [Measure_Day3_Max_Temperature]
@@ -198,10 +208,20 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=17
 DynamicVariables=1
 
+[Measure_Day3_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day3_Max_Temperature])
+DynamicVariables=1
+
 [Measure_Day4_Max_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=18
+DynamicVariables=1
+
+[Measure_Day4_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day4_Max_Temperature])
 DynamicVariables=1
 
 [Measure_Day5_Max_Temperature]
@@ -210,16 +230,31 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=19
 DynamicVariables=1
 
+[Measure_Day5_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day5_Max_Temperature])
+DynamicVariables=1
+
 [Measure_Day6_Max_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=20
 DynamicVariables=1
 
+[Measure_Day6_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day6_Max_Temperature])
+DynamicVariables=1
+
 [Measure_Day7_Max_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=21
+DynamicVariables=1
+
+[Measure_Day7_Max_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day7_Max_Temperature])
 DynamicVariables=1
 ;============================================================
 ; Next 7 Days Minimum Temperature
@@ -231,10 +266,20 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=22
 DynamicVariables=1
 
+[Measure_Day1_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day1_Min_Temperature])
+DynamicVariables=1
+
 [Measure_Day2_Min_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=23
+DynamicVariables=1
+
+[Measure_Day2_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day2_Min_Temperature])
 DynamicVariables=1
 
 [Measure_Day3_Min_Temperature]
@@ -243,10 +288,20 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=24
 DynamicVariables=1
 
+[Measure_Day3_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day3_Min_Temperature])
+DynamicVariables=1
+
 [Measure_Day4_Min_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=25
+DynamicVariables=1
+
+[Measure_Day4_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day4_Min_Temperature])
 DynamicVariables=1
 
 [Measure_Day5_Min_Temperature]
@@ -255,16 +310,31 @@ URL=[Measure_Weather_Daily_Parent]
 StringIndex=26
 DynamicVariables=1
 
+[Measure_Day5_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day5_Min_Temperature])
+DynamicVariables=1
+
 [Measure_Day6_Min_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=27
 DynamicVariables=1
 
+[Measure_Day6_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day6_Min_Temperature])
+DynamicVariables=1
+
 [Measure_Day7_Min_Temperature]
 Measure=WebParser
 URL=[Measure_Weather_Daily_Parent]
 StringIndex=28
+DynamicVariables=1
+
+[Measure_Day7_Min_Temperature_Rounded]
+Measure=Calc
+Formula=Round([Measure_Day7_Min_Temperature])
 DynamicVariables=1
 ;============================================================
 ; Next 7 Days Weather Code
