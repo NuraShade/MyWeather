@@ -23,4 +23,4 @@ Temperature_Unit=celsius
 ; Options: kmh, mph, ms, kn (kilometers/hour, miles/hour, meters/second, knots)
 Wind_Speed_Unit=kmh
 Scale=1
-Layout=6
+Layout=7
