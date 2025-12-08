@@ -33,6 +33,7 @@ Container=ContentContainer
 ;           Measures
 ;=============================================================
 @include_frostbehind_measure=#@#Includes\FrostBehindMeasure.inc
+@include_current_forecast_measures=#@#Includes\WeatherMeasures\CurrentForecast.inc
 ;=============================================================
 ;           Content
 ;=============================================================

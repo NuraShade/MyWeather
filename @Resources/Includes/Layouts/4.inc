@@ -12,6 +12,10 @@ Antialias=1
 DynamicVariables=1
 Container=ContentContainer
 ;=============================================================
+;           Measures
+;=============================================================
+@include_current_forecast_measures=#@#Includes\WeatherMeasures\CurrentForecast.inc
+;=============================================================
 ;           Content
 ;=============================================================
 [Round_Rectangle_Shape]

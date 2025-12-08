@@ -11,6 +11,11 @@ Antialias=1
 DynamicVariables=1
 Container=ContentContainer
 ;=============================================================
+;           Measures
+;=============================================================
+@include_current_forecast_measures=#@#Includes\WeatherMeasures\CurrentForecast.inc
+@include_7days_forecast_measures=#@#Includes\WeatherMeasures\7DaysForecast.inc
+;=============================================================
 ;           Content
 ;=============================================================
 [Round_Rectangle_Shape_Background]
@@ -83,7 +88,7 @@ Container=ContentContainer
 [Feels_And_Low_Tonight_Temperature_Text]
 Meter=String
 MeasureName=Measure_Current_Temperature_Rounded
-MeasureName2=Measure_Today_Min_Temperature_Rounded
+MeasureName2=Measure_Day1_Min_Temperature_Rounded
 X=(((#Background_Width#*#Scale#)-20*#Scale#)/2)r
 Y=((((#Background_Height#*#Scale#)-20*#Scale#)/3.2)/2)r
 Text=Feels Like %1#CRLF#Low Tonight %2
