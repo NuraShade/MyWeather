@@ -1,4 +1,3 @@
-[Rainmeter]
 ;============================================================
 ;  NuraShade Skin
 ;  Copyright (c) 2025 NuraShade
@@ -17,11 +16,6 @@
 ;
 ;  License Details: https://creativecommons.org/licenses/by-sa/3.0/
 ;============================================================
-;============================================================
-; Open-Meteo Weather API - Hourly Forecast
-; Fetches 7-hour weather forecast data from Open-Meteo API
-;============================================================
-
 [Measure_Weather_Hourly_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&hourly=temperature_2m,weather_code,is_day&timezone=auto&forecast_hours=7

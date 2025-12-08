@@ -1,4 +1,3 @@
-[Rainmeter]
 ;============================================================
 ;  NuraShade Skin
 ;  Copyright (c) 2025 NuraShade
@@ -17,11 +16,6 @@
 ;
 ;  License Details: https://creativecommons.org/licenses/by-sa/3.0/
 ;============================================================
-;============================================================
-; Open-Meteo Weather API - Daily Forecast
-; Fetches 7-day weather forecast data from Open-Meteo API
-;============================================================
-
 [Measure_Weather_Daily_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&forecast_days=7&temperature_unit=#Temperature_Unit#
