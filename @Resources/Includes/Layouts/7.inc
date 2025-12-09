@@ -65,8 +65,41 @@ StringAlign=Right
 Text=Sunrise at %1 AM #CRLF#Sunset at %2
 MeterStyle=Text_Style
 
+[Daily_And_Hourly_Forecast_Toggle_Shape_0]
+This=FillColor 0,0,0,0
+That=FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Accent_Color#,70
+[Daily_And_Hourly_Forecast_Toggle_Shape_1]
+This=FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Accent_Color#,70
+That=FillColor 0,0,0,0
+
 [Daily_And_Hourly_Forecast_Toggle_Shape]
 Meter=Shape
-Shape=Rectangle 0,0,(200*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#,#Daily_And_Hourly_Forecast_Toggle_Shape_Opacity#
-Shape2=Rectangle 0,0,(100*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#
-Shape3=Rectangle 0,0,(100*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color# | Offset (100*#Scale#),0
+X=(20*#Scale#)
+Y=(180*#Scale#)
+Shape=Rectangle 0,0,(200*#Scale#),(40*#Scale#),4 | StrokeWidth 1 | StrokeColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color# | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#,50
+Shape2=Rectangle 0,0,(100*#Scale#),(40*#Scale#),4 | StrokeWidth 0 | Extend This
+Shape3=Rectangle 0,0,(100*#Scale#),(40*#Scale#),4 | StrokeWidth 0 | Extend That | Offset (100*#Scale#),0
+MeterStyle=Daily_And_Hourly_Forecast_Toggle_Shape_#Is_Current_Forecast_Hourly#
+DynamicVariables=1
+Container=ContentContainer
+
+[Hourly_Forecast_Text]
+Meter=String
+Text=Hourly 
+X=(50*#Scale#)r
+Y=(20*#Scale#)r
+W=(100*#Scale#)
+H=(40*#Scale#)
+StringAlign=CenterCenter
+MeterStyle=Text_Style
+LeftMouseUpAction=[!SetVariable Is_Current_Forecast_Hourly 1][!WriteKeyValue Variables Is_Current_Forecast_Hourly 1 "#@#Includes\Layouts\7.inc"][!UpdateMeter *][!Redraw]
+[Daily_Forecast_Text]
+Meter=String
+Text=Daily 
+X=R
+Y=r
+W=(100*#Scale#)
+H=(40*#Scale#)
+StringAlign=CenterCenter
+MeterStyle=Text_Style
+LeftMouseUpAction=[!SetVariable Is_Current_Forecast_Hourly 0][!WriteKeyValue Variables Is_Current_Forecast_Hourly 0 "#@#Includes\Layouts\7.inc"][!UpdateMeter *][!Redraw]

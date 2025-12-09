@@ -15,4 +15,4 @@ Current_Weather_Condition_W=100
 Current_Weather_Condition_H=100
 
 Daily_And_Hourly_Forecast_Toggle_Shape_Color=120,120,120
-Daily_And_Hourly_Forecast_Toggle_Shape_Opacity=100
+Daily_And_Hourly_Forecast_Toggle_Shape_Accent_Color=43,77,139
