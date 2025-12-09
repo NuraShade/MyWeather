@@ -26,6 +26,9 @@
 ; Wind_Speed_Unit=kmh
 Debug=0
 
+Time_Stamp_Format_For_Date_And_Day_Name=%Y-%m-%d
+Time_Stamp_Format_For_Sun_Cycle=%Y-%m-%dT%H:%M
+
 [Measure_Weather_Daily_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&forecast_days=7&temperature_unit=#Temperature_Unit#
@@ -83,49 +86,49 @@ DynamicVariables=1
 [Measure_Day1_Name]
 Measure=Time
 TimeStamp=[Measure_Day1_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day2_Name]
 Measure=Time
 TimeStamp=[Measure_Day2_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day3_Name]
 Measure=Time
 TimeStamp=[Measure_Day3_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day4_Name]
 Measure=Time
 TimeStamp=[Measure_Day4_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day5_Name]
 Measure=Time
 TimeStamp=[Measure_Day5_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day6_Name]
 Measure=Time
 TimeStamp=[Measure_Day6_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 
 [Measure_Day7_Name]
 Measure=Time
 TimeStamp=[Measure_Day7_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%A
 DynamicVariables=1
 ;============================================================
@@ -135,49 +138,49 @@ DynamicVariables=1
 [Measure_Day1_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day1_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day2_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day2_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day3_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day3_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day4_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day4_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day5_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day5_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day6_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day6_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 
 [Measure_Day7_Name_Abbreviated]
 Measure=Time
 TimeStamp=[Measure_Day7_Date]
-TimeStampFormat=%Y-%m-%d
+TimeStampFormat=#Time_Stamp_Format_For_Date_And_Day_Name#
 Format=%a
 DynamicVariables=1
 ;============================================================
@@ -192,7 +195,7 @@ DynamicVariables=1
 
 [Measure_Day1_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day1_Max_Temperature])
+Formula=Round([Measure_Day1_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day2_Max_Temperature]
@@ -203,7 +206,7 @@ DynamicVariables=1
 
 [Measure_Day2_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day2_Max_Temperature])
+Formula=Round([Measure_Day2_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day3_Max_Temperature]
@@ -214,7 +217,7 @@ DynamicVariables=1
 
 [Measure_Day3_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day3_Max_Temperature])
+Formula=Round([Measure_Day3_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day4_Max_Temperature]
@@ -225,7 +228,7 @@ DynamicVariables=1
 
 [Measure_Day4_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day4_Max_Temperature])
+Formula=Round([Measure_Day4_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day5_Max_Temperature]
@@ -236,7 +239,7 @@ DynamicVariables=1
 
 [Measure_Day5_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day5_Max_Temperature])
+Formula=Round([Measure_Day5_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day6_Max_Temperature]
@@ -247,7 +250,7 @@ DynamicVariables=1
 
 [Measure_Day6_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day6_Max_Temperature])
+Formula=Round([Measure_Day6_Max_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day7_Max_Temperature]
@@ -258,7 +261,7 @@ DynamicVariables=1
 
 [Measure_Day7_Max_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day7_Max_Temperature])
+Formula=Round([Measure_Day7_Max_Temperature],0)
 DynamicVariables=1
 ;============================================================
 ; Next 7 Days Minimum Temperature
@@ -272,7 +275,7 @@ DynamicVariables=1
 
 [Measure_Day1_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day1_Min_Temperature])
+Formula=Round([Measure_Day1_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day2_Min_Temperature]
@@ -283,7 +286,7 @@ DynamicVariables=1
 
 [Measure_Day2_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day2_Min_Temperature])
+Formula=Round([Measure_Day2_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day3_Min_Temperature]
@@ -294,7 +297,7 @@ DynamicVariables=1
 
 [Measure_Day3_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day3_Min_Temperature])
+Formula=Round([Measure_Day3_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day4_Min_Temperature]
@@ -305,7 +308,7 @@ DynamicVariables=1
 
 [Measure_Day4_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day4_Min_Temperature])
+Formula=Round([Measure_Day4_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day5_Min_Temperature]
@@ -316,7 +319,7 @@ DynamicVariables=1
 
 [Measure_Day5_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day5_Min_Temperature])
+Formula=Round([Measure_Day5_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day6_Min_Temperature]
@@ -327,7 +330,7 @@ DynamicVariables=1
 
 [Measure_Day6_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day6_Min_Temperature])
+Formula=Round([Measure_Day6_Min_Temperature],0)
 DynamicVariables=1
 
 [Measure_Day7_Min_Temperature]
@@ -338,7 +341,7 @@ DynamicVariables=1
 
 [Measure_Day7_Min_Temperature_Rounded]
 Measure=Calc
-Formula=Round([Measure_Day7_Min_Temperature])
+Formula=Round([Measure_Day7_Min_Temperature],0)
 DynamicVariables=1
 ;============================================================
 ; Next 7 Days Weather Code
@@ -589,49 +592,49 @@ DynamicVariables=1
 [Measure_Day1_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day1_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day2_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day2_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day3_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day3_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day4_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day4_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day5_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day5_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day6_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day6_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day7_Sunrise_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day7_Sunrise]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
@@ -642,49 +645,49 @@ DynamicVariables=1
 [Measure_Day1_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day1_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day2_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day2_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day3_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day3_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day4_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day4_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day5_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day5_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day6_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day6_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
 [Measure_Day7_Sunset_Formatted]
 Measure=Time
 TimeStamp=[Measure_Day7_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%H:%M
 DynamicVariables=1
 
@@ -695,48 +698,48 @@ DynamicVariables=1
 [Measure_Day1_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day1_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day2_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day2_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day3_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day3_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day4_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day4_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day5_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day5_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day6_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day6_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
 
 [Measure_Day7_Sunset_12Hour]
 Measure=Time
 TimeStamp=[Measure_Day7_Sunset]
-TimeStampFormat=%Y-%m-%dT%H:%M
+TimeStampFormat=#Time_Stamp_Format_For_Sun_Cycle#
 Format=%#I:%M %p
 DynamicVariables=1
