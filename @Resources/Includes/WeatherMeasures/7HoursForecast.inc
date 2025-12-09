@@ -26,6 +26,15 @@
 ; Wind_Speed_Unit=kmh
 Debug=0
 
+;Hours IsDay
+Hour1_Is_Day=1
+Hour2_Is_Day=1
+Hour3_Is_Day=1
+Hour4_Is_Day=1
+Hour5_Is_Day=1
+Hour6_Is_Day=1
+Hour7_Is_Day=1
+
 [Measure_Weather_Hourly_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&hourly=temperature_2m,weather_code,is_day&timezone=auto&forecast_hours=7
@@ -326,42 +335,49 @@ DynamicVariables=1
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=22
+OnUpdateAction=[!SetVariable Hour1_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour2_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=23
+OnUpdateAction=[!SetVariable Hour2_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour3_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=24
+OnUpdateAction=[!SetVariable Hour3_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour4_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=25
+OnUpdateAction=[!SetVariable Hour4_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour5_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=26
+OnUpdateAction=[!SetVariable Hour5_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour6_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=27
+OnUpdateAction=[!SetVariable Hour6_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 
 [Measure_Hour7_Is_Day]
 Measure=WebParser
 URL=[Measure_Weather_Hourly_Parent]
 StringIndex=28
+OnUpdateAction=[!SetVariable Hour7_Is_Day  [Measure_Hour1_Is_Day]]
 DynamicVariables=1
 ;============================================================
 ; Hourly Weather Condition Translations
@@ -421,49 +437,49 @@ DynamicVariables=1
 
 [Measure_Hour1_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour1_Weather_Code] + ([Measure_Hour1_Is_Day] * 1000)
+Formula=[Measure_Hour1_Weather_Code] + (#Hour1_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour2_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour2_Weather_Code] + ([Measure_Hour2_Is_Day] * 1000)
+Formula=[Measure_Hour2_Weather_Code] + (#Hour2_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour3_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour3_Weather_Code] + ([Measure_Hour3_Is_Day] * 1000)
+Formula=[Measure_Hour3_Weather_Code] + (#Hour3_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour4_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour4_Weather_Code] + ([Measure_Hour4_Is_Day] * 1000)
+Formula=[Measure_Hour4_Weather_Code] + (#Hour4_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour5_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour5_Weather_Code] + ([Measure_Hour5_Is_Day] * 1000)
+Formula=[Measure_Hour5_Weather_Code] + (#Hour5_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour6_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour6_Weather_Code] + ([Measure_Hour6_Is_Day] * 1000)
+Formula=[Measure_Hour6_Weather_Code] + (#Hour6_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1
 
 [Measure_Hour7_Weather_Icon]
 Measure=Calc
-Formula=[Measure_Hour7_Weather_Code] + ([Measure_Hour7_Is_Day] * 1000)
+Formula=[Measure_Hour7_Weather_Code] + (#Hour7_Is_Day# * 1000)
 RegExpSubstitute=1
 Substitute="^1000$":"ClearDay.png","^0$":"ClearNight.png","^1001$":"MainlyClearDay.png","^1$":"MainlyClearNight.png","^1002$":"PartlyCloudyDay.png","^2$":"PartlyCloudyNight.png","^(100)?3$":"Overcast.png","^104[58]$":"FoggyDay.png","^4[58]$":"FoggyNight.png","^(10)?5[135]$":"Drizzle.png","^(10)?5[67]$":"FreezingRain.png","^(10)?6[135]$":"Rain.png","^(10)?6[67]$":"FreezingRain.png","^(10)?7[1357]$":"Snow.png","^(10)?8[012]$":"Rain.png","^(10)?8[56]$":"Snow.png","^(10)?9[569]$":"ThunderStorm.png"
 DynamicVariables=1

@@ -13,3 +13,6 @@ Font_Weight=300
 ;Current Weather Condition Icon Dimensions
 Current_Weather_Condition_W=100
 Current_Weather_Condition_H=100
+
+Daily_And_Hourly_Forecast_Toggle_Shape_Color=120,120,120
+Daily_And_Hourly_Forecast_Toggle_Shape_Opacity=100

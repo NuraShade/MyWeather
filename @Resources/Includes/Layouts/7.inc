@@ -1,3 +1,5 @@
+[Variables]
+Is_Current_Forecast_Hourly=1
 ;=============================================================
 ;           MeterStyles
 ;=============================================================
@@ -15,6 +17,7 @@ Container=ContentContainer
 @include_frostbehind_measure=#@#Includes\FrostBehindMeasure.inc
 @include_current_forecast_measures=#@#Includes\WeatherMeasures\CurrentForecast.inc
 @include_7days_forecast_measures=#@#Includes\WeatherMeasures\7DaysForecast.inc
+@include_7hours_forecast_measures=#@#Includes\WeatherMeasures\7HoursForecast.inc
 ;=============================================================
 ;           Content
 ;=============================================================
@@ -52,20 +55,18 @@ MeterStyle=Text_Style
 InlineSetting=Size | (12*#Scale#)
 InlinePattern=[°][CF]
 
-[Sunrise_Cycle_Text]
+[Sun_Cycle_Text]
 Meter=String
 MeasureName=Measure_Day1_Sunrise_Formatted
+MeasureName2=Measure_Day1_Sunset_12Hour
 X=((#Background_Width#*#Scale#)-20*#Scale#)
 Y=((-55*#Scale#) /2)r
 StringAlign=Right
-Text=Sunrise at %1 AM
+Text=Sunrise at %1 AM #CRLF#Sunset at %2
 MeterStyle=Text_Style
 
-[Sunset_Cycle_Text]
-Meter=String
-MeasureName=Measure_Day1_Sunset_12Hour
-X=r
-Y=R
-StringAlign=Right
-Text=Sunset  at  %1
-MeterStyle=Text_Style
+[Daily_And_Hourly_Forecast_Toggle_Shape]
+Meter=Shape
+Shape=Rectangle 0,0,(200*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#,#Daily_And_Hourly_Forecast_Toggle_Shape_Opacity#
+Shape2=Rectangle 0,0,(100*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#
+Shape3=Rectangle 0,0,(100*#Scale#),(40*#Scale#),8 | StrokeWidth 0 | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color# | Offset (100*#Scale#),0
