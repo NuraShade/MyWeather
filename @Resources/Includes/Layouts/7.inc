@@ -1,5 +1,10 @@
 [Variables]
 Is_Current_Forecast_Hourly=1
+Data_Forecast_Shape_Y=235
+Data_Forecast_Shape_W=65
+Data_Forecast_Shape_H=150
+Data_Forecast_Weather_Icon_W=50
+Data_Forecast_Weather_Icon_H=50
 ;=============================================================
 ;           MeterStyles
 ;=============================================================
@@ -11,6 +16,59 @@ FontSize=(12*#Scale#)
 Antialias=1
 DynamicVariables=1
 Container=ContentContainer
+
+[Data_Forecast_Top_Text_1_0]
+Text=[Measure_Day1_Name_Abbreviated]
+[Data_Forecast_Top_Text_1_1]
+Text=[Measure_Hour1_Time_Abbreviated_Formatted_12H]
+[Data_Forecast_Top_Text_2_0]
+Text=[Measure_Day2_Name_Abbreviated]
+[Data_Forecast_Top_Text_2_1]
+Text=[Measure_Hour2_Time_Abbreviated_Formatted_12H]
+[Data_Forecast_Top_Text_3_0]
+Text=[Measure_Day3_Name_Abbreviated]
+[Data_Forecast_Top_Text_3_1]
+Text=[Measure_Hour3_Time_Abbreviated_Formatted_12H]
+[Data_Forecast_Top_Text_4_0]
+Text=[Measure_Day4_Name_Abbreviated]
+[Data_Forecast_Top_Text_4_1]
+Text=[Measure_Hour4_Time_Abbreviated_Formatted_12H]
+[Data_Forecast_Top_Text_5_0]
+Text=[Measure_Day5_Name_Abbreviated]
+[Data_Forecast_Top_Text_5_1]
+Text=[Measure_Hour5_Time_Abbreviated_Formatted_12H]
+
+[Data_Forecast_Top_Text_Style]
+X=((#Data_Forecast_Shape_W#*#Scale#)/2)r
+Y=(10*#Scale#)r
+StringAlign=Center
+
+[Data_Forecast_Shape_Style]
+Y=(#Data_Forecast_Shape_Y#*#Scale#)
+Shape=Rectangle 0,0,(#Data_Forecast_Shape_W#*#Scale#),(#Data_Forecast_Shape_H#*#Scale#),4 | StrokeWidth 1 | StrokeColor 120,120,120 | FillColor #Data_Forecast_Shape_Color#,80
+DynamicVariables=1
+Container=ContentContainer
+
+[Data_Forecast_Weather_Icon1_0]
+MeasureName=Measure_Day1_Weather_Icon
+[Data_Forecast_Weather_Icon1_1]
+MeasureName=Measure_Hour1_Weather_Icon
+[Data_Forecast_Weather_Icon2_0]
+MeasureName=Measure_Day2_Weather_Icon
+[Data_Forecast_Weather_Icon2_1]
+MeasureName=Measure_Hour2_Weather_Icon
+[Data_Forecast_Weather_Icon3_0]
+MeasureName=Measure_Day3_Weather_Icon
+[Data_Forecast_Weather_Icon3_1]
+MeasureName=Measure_Hour3_Weather_Icon
+[Data_Forecast_Weather_Icon4_0]
+MeasureName=Measure_Day4_Weather_Icon
+[Data_Forecast_Weather_Icon4_1]
+MeasureName=Measure_Hour4_Weather_Icon
+[Data_Forecast_Weather_Icon5_0]
+MeasureName=Measure_Day5_Weather_Icon
+[Data_Forecast_Weather_Icon5_1]
+MeasureName=Measure_Hour5_Weather_Icon
 ;=============================================================
 ;           Measures
 ;=============================================================
@@ -93,6 +151,7 @@ H=(40*#Scale#)
 StringAlign=CenterCenter
 MeterStyle=Text_Style
 LeftMouseUpAction=[!SetVariable Is_Current_Forecast_Hourly 1][!WriteKeyValue Variables Is_Current_Forecast_Hourly 1 "#@#Includes\Layouts\7.inc"][!UpdateMeter *][!Redraw]
+
 [Daily_Forecast_Text]
 Meter=String
 Text=Daily 
@@ -103,3 +162,67 @@ H=(40*#Scale#)
 StringAlign=CenterCenter
 MeterStyle=Text_Style
 LeftMouseUpAction=[!SetVariable Is_Current_Forecast_Hourly 0][!WriteKeyValue Variables Is_Current_Forecast_Hourly 0 "#@#Includes\Layouts\7.inc"][!UpdateMeter *][!Redraw]
+
+[Data_Forecast_Shape_1]
+Meter=Shape
+X=(20*#Scale#)
+MeterStyle=Data_Forecast_Shape_Style
+[Data_Forecast_Top_Text_1]
+Meter=String
+MeterStyle=Text_Style | Data_Forecast_Top_Text_Style | Data_Forecast_Top_Text_1_#Is_Current_Forecast_Hourly#
+
+[Data_Forecast_Weather_Icon_Style]
+ImageName=#@#Images\WeatherIcons\%1
+X=(-(#Data_Forecast_Weather_Icon_W#*#Scale#)/2)r
+Y=(30*#Scale#)r
+W=(#Data_Forecast_Weather_Icon_W#*#Scale#)
+H=(#Data_Forecast_Weather_Icon_H#*#Scale#)
+DynamicVariables=1
+Container=ContentContainer
+[Data_Forecast_Weather_Icon1]
+Meter=Image
+MeterStyle=Data_Forecast_Weather_Icon_Style | Data_Forecast_Weather_Icon1_#Is_Current_Forecast_Hourly#
+
+[Data_Forecast_Shape_2]
+Meter=Shape
+X=(95*#Scale#)
+MeterStyle=Data_Forecast_Shape_Style
+[Data_Forecast_Top_Text_2]
+Meter=String
+MeterStyle=Text_Style | Data_Forecast_Top_Text_Style | Data_Forecast_Top_Text_2_#Is_Current_Forecast_Hourly#
+[Data_Forecast_Weather_Icon2]
+Meter=Image
+MeterStyle=Data_Forecast_Weather_Icon_Style | Data_Forecast_Weather_Icon2_#Is_Current_Forecast_Hourly#
+
+[Data_Forecast_Shape_3]
+Meter=Shape
+X=(170*#Scale#)
+MeterStyle=Data_Forecast_Shape_Style
+[Data_Forecast_Top_Text_3]
+Meter=String
+MeterStyle=Text_Style | Data_Forecast_Top_Text_Style | Data_Forecast_Top_Text_3_#Is_Current_Forecast_Hourly#
+[Data_Forecast_Weather_Icon3]
+Meter=Image
+MeterStyle=Data_Forecast_Weather_Icon_Style | Data_Forecast_Weather_Icon3_#Is_Current_Forecast_Hourly#
+
+[Data_Forecast_Shape_4]
+Meter=Shape
+X=(245*#Scale#)
+MeterStyle=Data_Forecast_Shape_Style
+[Data_Forecast_Top_Text_4]
+Meter=String
+MeterStyle=Text_Style | Data_Forecast_Top_Text_Style | Data_Forecast_Top_Text_4_#Is_Current_Forecast_Hourly#
+[Data_Forecast_Weather_Icon4]
+Meter=Image
+MeterStyle=Data_Forecast_Weather_Icon_Style | Data_Forecast_Weather_Icon4_#Is_Current_Forecast_Hourly#
+
+[Data_Forecast_Shape_5]
+Meter=Shape
+X=(320*#Scale#)
+MeterStyle=Data_Forecast_Shape_Style
+[Data_Forecast_Top_Text_5]
+Meter=String
+MeterStyle=Text_Style | Data_Forecast_Top_Text_Style | Data_Forecast_Top_Text_5_#Is_Current_Forecast_Hourly#
+[Data_Forecast_Weather_Icon5]
+Meter=Image
+MeterStyle=Data_Forecast_Weather_Icon_Style | Data_Forecast_Weather_Icon5_#Is_Current_Forecast_Hourly#
