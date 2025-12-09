@@ -37,7 +37,7 @@ Hour7_Is_Day=1
 
 Time_Stamp_Format_For_Hour=%Y-%m-%dT%H:%M
 
-Substitute_For_Hours_Weather_Icons="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute_For_HourN_Weather_Icons="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
 
 Substitute_For_HourN_Weather_Condition_Translated="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
 
@@ -445,47 +445,47 @@ DynamicVariables=1
 Measure=Calc
 Formula=[Measure_Hour1_Weather_Code] + (#Hour1_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour2_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour2_Weather_Code] + (#Hour2_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour3_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour3_Weather_Code] + (#Hour3_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour4_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour4_Weather_Code] + (#Hour4_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour5_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour5_Weather_Code] + (#Hour5_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour6_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour6_Weather_Code] + (#Hour6_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1
 
 [Measure_Hour7_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Hour7_Weather_Code] + (#Hour7_Is_Day# * 1000)
 RegExpSubstitute=1
-Substitute=#Substitute_For_Hours_Weather_Icons#
+Substitute=#Substitute_For_HourN_Weather_Icons#
 DynamicVariables=1

@@ -29,6 +29,10 @@ Debug=0
 Time_Stamp_Format_For_Date_And_Day_Name=%Y-%m-%d
 Time_Stamp_Format_For_Sun_Cycle=%Y-%m-%dT%H:%M
 
+Substitute_For_DayN_Weather_Condition_Translated="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+
+Substitute_For_DayN_Weather_Icon="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+
 [Measure_Weather_Daily_Parent]
 Measure=WebParser
 URL=https://api.open-meteo.com/v1/forecast?latitude=#Latitude#&longitude=#Longitude#&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto&forecast_days=7&temperature_unit=#Temperature_Unit#
@@ -396,49 +400,49 @@ DynamicVariables=1
 Measure=Calc
 Formula=[Measure_Day1_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day2_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day2_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day3_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day3_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day4_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day4_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day5_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day5_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day6_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day6_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 
 [Measure_Day7_Weather_Condition_Translated]
 Measure=Calc
 Formula=[Measure_Day7_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"Clear Sky","^1$":"Mainly Clear","^2$":"Partly Cloudy","^3$":"Overcast","^45$":"Fog","^48$":"Depositing Rime Fog","^51$":"Light Drizzle","^53$":"Moderate Drizzle","^55$":"Dense Drizzle","^56$":"Light Freezing Drizzle","^57$":"Dense Freezing Drizzle","^61$":"Slight Rain","^63$":"Moderate Rain","^65$":"Heavy Rain","^66$":"Light Freezing Rain","^67$":"Heavy Freezing Rain","^71$":"Slight Snow Fall","^73$":"Moderate Snow Fall","^75$":"Heavy Snow Fall","^77$":"Snow Grains","^80$":"Slight Rain Showers","^81$":"Moderate Rain Showers","^82$":"Violent Rain Showers","^85$":"Slight Snow Showers","^86$":"Heavy Snow Showers","^95$":"Thunderstorm","^96$":"Thunderstorm with Slight Hail","^99$":"Thunderstorm with Heavy Hail"
+Substitute=#Substitute_For_DayN_Weather_Condition_Translated#
 DynamicVariables=1
 ;============================================================
 ; Daily Weather Icons
@@ -448,49 +452,49 @@ DynamicVariables=1
 Measure=Calc
 Formula=[Measure_Day1_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day2_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day2_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day3_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day3_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day4_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day4_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day5_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day5_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day6_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day6_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 [Measure_Day7_Weather_Icon]
 Measure=Calc
 Formula=[Measure_Day7_Weather_Code]
 RegExpSubstitute=1
-Substitute="^0$":"ClearDay.png","^1$":"ClearDay.png","^2$":"PartlyCloudyDay.png","^3$":"Overcast.png","^45$":"FoggyDay.png","^48$":"FoggyDay.png","^51$":"Drizzle.png","^53$":"Drizzle.png","^55$":"Drizzle.png","^56$":"FreezingRain.png","^57$":"FreezingRain.png","^61$":"Rain.png","^63$":"Rain.png","^65$":"Rain.png","^66$":"FreezingRain.png","^67$":"FreezingRain.png","^71$":"Snow.png","^73$":"Snow.png","^75$":"Snow.png","^77$":"Snow.png","^80$":"Rain.png","^81$":"Rain.png","^82$":"Rain.png","^85$":"Snow.png","^86$":"Snow.png","^95$":"ThunderStorm.png","^96$":"ThunderStorm.png","^99$":"ThunderStorm.png"
+Substitute=#Substitute_For_DayN_Weather_Icon#
 DynamicVariables=1
 
 ;============================================================
