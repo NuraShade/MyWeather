@@ -1,5 +1,5 @@
 [Variables]
-Is_Current_Forecast_Hourly=1
+Is_Current_Forecast_Hourly=0
 ;=============================================================
 ;           MeterStyles
 ;=============================================================
@@ -152,20 +152,24 @@ That=FillColor 0,0,0,0
 @include_current_forecast_measures=#@#Includes\WeatherMeasures\CurrentForecast.inc
 @include_7days_forecast_measures=#@#Includes\WeatherMeasures\7DaysForecast.inc
 @include_7hours_forecast_measures=#@#Includes\WeatherMeasures\7HoursForecast.inc
+@include_reversegeo=#@#Includes\NuraShadeReverseGeo\src\ReverseGeo.inc
 ;=============================================================
 ;           Content
 ;=============================================================
 
 [Current_City_And_Country_Text]
 Meter=String
-Text=Hasilpur,Lahore 
+MeasureName=Measure_City
+MeasureName2=Measure_CountryName
+Text=%1,%2 
 X=(20*#Scale#)
 Y=(20*#Scale#)
 MeterStyle=Text_Style
+InlineSetting=Color  | #Sub_Content_Color#
+InlinePattern=,(.*)
 
 [Current_Weather_Condition_Icon]
 Meter=Image 
-; MeasureName=Measure_Weather_Icon
 ImageName=#@#Images\WeatherIcons\ClearDay
 X=(10*#Scale#)
 Y=(60*#Scale#)
@@ -189,15 +193,25 @@ MeterStyle=Text_Style
 InlineSetting=Size | (12*#Scale#)
 InlinePattern=[°][CF]
 
-[Sun_Cycle_Text]
+[Sun_Cycle_And_Other_Text]
 Meter=String
 MeasureName=Measure_Day1_Sunrise_Formatted
 MeasureName2=Measure_Day1_Sunset_12Hour
-X=((#Background_Width#*#Scale#)-20*#Scale#)
-Y=((-55*#Scale#) /2)r
-StringAlign=Right
-Text=Sunrise at %1 AM #CRLF#Sunset at %2
+MeasureName3=Measure_Humidity
+MeasureName4=Measure_Humidity_Unit
+MeasureName5=Measure_Wind_Speed
+MeasureName6=Measure_Wind_Speed_Unit
+MeasureName7=Measure_Pressure_Rounded
+MeasureName8=Measure_Pressure_Unit
+X=((#Background_Width#*#Scale#)-140*#Scale#)
+Y=((-90*#Scale#) /2)r
+StringAlign=Left
+FontSize=(11*#Scale#)
+Text=Sunrise at %1 AM #CRLF#Sunset at %2#CRLF#Humidity: %3 %4#CRLF#Wind: %5 %6#CRLF#Pressure: %7 %8
 MeterStyle=Text_Style
+FontColor=#Sub_Content_Color#
+InlineSetting=Color  | #Font_Color#
+InlinePattern=(Sunrise at|Sunset at|Humidity:|Wind:|Pressure:)
 
 [Daily_And_Hourly_Forecast_Toggle_Shape]
 Meter=Shape

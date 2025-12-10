@@ -24,3 +24,4 @@ Temperature_Unit=celsius
 Wind_Speed_Unit=kmh
 Scale=1
 Layout=7
+LocalityLanguage=en
