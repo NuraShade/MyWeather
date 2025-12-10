@@ -1,10 +1,5 @@
 [Variables]
 Is_Current_Forecast_Hourly=1
-Data_Forecast_Shape_Y=235
-Data_Forecast_Shape_W=65
-Data_Forecast_Shape_H=150
-Data_Forecast_Weather_Icon_W=50
-Data_Forecast_Weather_Icon_H=50
 ;=============================================================
 ;           MeterStyles
 ;=============================================================
@@ -45,7 +40,7 @@ StringAlign=Center
 
 [Data_Forecast_Shape_Style]
 Y=(#Data_Forecast_Shape_Y#*#Scale#)
-Shape=Rectangle 0,0,(#Data_Forecast_Shape_W#*#Scale#),(#Data_Forecast_Shape_H#*#Scale#),4 | StrokeWidth 1 | StrokeColor 120,120,120 | FillColor #Data_Forecast_Shape_Color#,80
+Shape=Rectangle 0,0,(#Data_Forecast_Shape_W#*#Scale#),(#Data_Forecast_Shape_H#*#Scale#),4 | StrokeWidth 1 | StrokeColor #Sub_Content_Color# | FillColor #Accent_Color#,80
 DynamicVariables=1
 Container=ContentContainer
 
@@ -90,6 +85,7 @@ Text=%1
 X=r
 Y=(30*#Scale#)r
 FontWeight=500
+FontColor=#Sub_Content_Color#
 StringAlign=Center
 
 [Data_Forecast_SubText_Up_1_0]
@@ -143,6 +139,12 @@ MeasureName=Measure_Hour5_Temperature_Rounded
 [Data_Forecast_SubText_Down_5_1]
 Text=
 
+[Daily_And_Hourly_Forecast_Toggle_Shape_0]
+This=FillColor 0,0,0,0
+That=FillColor #Accent_Color#,70
+[Daily_And_Hourly_Forecast_Toggle_Shape_1]
+This=FillColor #Accent_Color#,70
+That=FillColor 0,0,0,0
 ;=============================================================
 ;           Measures
 ;=============================================================
@@ -197,18 +199,11 @@ StringAlign=Right
 Text=Sunrise at %1 AM #CRLF#Sunset at %2
 MeterStyle=Text_Style
 
-[Daily_And_Hourly_Forecast_Toggle_Shape_0]
-This=FillColor 0,0,0,0
-That=FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Accent_Color#,70
-[Daily_And_Hourly_Forecast_Toggle_Shape_1]
-This=FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Accent_Color#,70
-That=FillColor 0,0,0,0
-
 [Daily_And_Hourly_Forecast_Toggle_Shape]
 Meter=Shape
 X=(20*#Scale#)
 Y=(180*#Scale#)
-Shape=Rectangle 0,0,(200*#Scale#),(40*#Scale#),4 | StrokeWidth 1 | StrokeColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color# | FillColor #Daily_And_Hourly_Forecast_Toggle_Shape_Color#,50
+Shape=Rectangle 0,0,(200*#Scale#),(40*#Scale#),4 | StrokeWidth 1 | StrokeColor #Sub_Content_Color# | FillColor #Sub_Content_Color#,50
 Shape2=Rectangle 0,0,(100*#Scale#),(40*#Scale#),4 | StrokeWidth 0 | Extend This
 Shape3=Rectangle 0,0,(100*#Scale#),(40*#Scale#),4 | StrokeWidth 0 | Extend That | Offset (100*#Scale#),0
 MeterStyle=Daily_And_Hourly_Forecast_Toggle_Shape_#Is_Current_Forecast_Hourly#
