@@ -4,8 +4,6 @@ Background_Height=400
 Background_Color=32, 32, 32
 Background_Opacity=200
 Background_Corner_Round=12
-Round_Rectangle_Shape_Color=48,48,56
-Weather_Icon_Ellipse_Shape_Color=64,64,70
 ;Font Styles
 Font_Color=255, 255, 255
 Font_Face=SF Pro Display
